@@ -1,18 +1,18 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: bloom
+    databaseName: bloom_db_8jxo
+    user: treasure
 
 services:
   - type: web
-    name: mysite
+    name: bloom
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn bloom.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: bloom
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
