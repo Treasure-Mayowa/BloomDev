@@ -6,4 +6,4 @@ poetry install
 pip install gunicorn
 pip install python-decouple
 python manage.py collectstatic --no-input
-python manage.py migrat
+python manage.py migrate
