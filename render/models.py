@@ -7,7 +7,7 @@ class User(AbstractUser):
     pass
 
 class Journal(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="journal-entries")
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(default=f"Entry #{id}", max_length=35)
     content = encrypt(models.TextField())
     created_at = models.DateTimeField(auto_now_add=True)
