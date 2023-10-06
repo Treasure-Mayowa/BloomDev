@@ -1,0 +1,13 @@
+{% extends "render/base.html" %}
+{% block title %}Edit Journal Entry - Bloom{% endblock title %}
+{% block body %}
+<h2>Edit Journal Entry</h2>
+    <form method="post" method="{% url 'edit_journal' journal_id=journal.id %}" class="form">
+        {% csrf_token %}
+        <input type="text" required placeholder="Title of journal entry" name="title" value="{{ journal.title }}"/>
+        <br>
+        <textarea required placeholder="Start writing..." name="content" rows="15">{{ journal.content }}</textarea>
+        <br>
+        <button type="submit" class="form-button">Done</button>
+    </form>
+{% endblock body %}

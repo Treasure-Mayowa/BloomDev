@@ -1,0 +1,25 @@
+{% extends "render/base.html" %}
+{% block title %}Todos - Bloom{% endblock title %}
+{% block body %}
+<div class="main">
+    <h2 style="float:left;">Your Todos</h2>
+    <button style="float:right;" class="button" id="new-todo"><i class='bx bx-plus'></i></button></a>
+    <br><br>
+    <form method="post" action="{% url 'add_todo' %}" id="todo-form">
+        {% csrf_token %}
+        <input type="text" name="todo" required placeholder="New todo"/>
+        <input type="text" name="details" placeholder="Add details"/>
+        <input type="number" name="expected_time" placeholder="Expected interval (in minutes)"/>
+        <button class="button" type="submit">Add Todo</button>
+    </form>
+</div>
+<br>
+{% if todos %}
+    {% for todo in todos %}
+    <a href="{% url 'delete_todo' id=todo.id %}"><i class='bx bx-trash'  style="color:red;"></i></a><input type="checkbox" {% if todo.done == True %} checked {% endif %} /><label>{{ todo.name }}</label>
+    <br>
+    {% endfor %}
+{% else %}
+<p>No todos for today</p>
+{% endif %}
+{% endblock body %}
