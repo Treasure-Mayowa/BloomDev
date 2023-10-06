@@ -1,20 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django_cryptography.fields import encrypt
 
 # Create your models here.
 class User(AbstractUser):
     pass
 
 class Journal(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="journal-entries")
     title = models.CharField(default=f"Entry #{id}", max_length=35)
-    content = models.TextField()
+    content = encrypt(models.TextField())
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Todo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name = models.TextField()
-    details = models.TextField()
+    name = encrypt(models.TextField())
+    details = encrypt(models.TextField())
     expected_time = models.IntegerField(default=0)
     actual_time = models.IntegerField(default=0)
     day_added = models.DateField(auto_now_add=True)
