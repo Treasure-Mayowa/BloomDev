@@ -40,8 +40,8 @@
                     <a href="" style="text-decoration: none;">Privacy Policy</a>
                     <a href=""><button class="button">Logout</button></a>
                 {% else %}
-                    <a href="" style="text-decoration: none;">Sign Up</a>
-                    <a href=""><button class="button">Log In</button></a>
+                    <a href="{% url "register" %}" style="text-decoration: none;">Sign Up</a>
+                    <a href="{% url "login" %}"><button class="button">Log In</button></a>
                 {% endif %}
             </div>
         </nav><br>
