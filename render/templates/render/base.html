@@ -7,6 +7,7 @@
         <script src="{% static 'render/gtag.js' %}"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{% block description %}{% endblock description %}" link rel="canonical" href="https://bloom-x6o3.onrender.com/{{ request.path }}">
         <title>{% block title %}{% endblock title %}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
