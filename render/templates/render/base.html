@@ -30,8 +30,8 @@
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAH1JREFUWEft1UEKwCAMBVG9eW9ecdeFONQgJDDdhkj6/Gpvyb6ebJ7mQLQjCilEAlQvlaGX/iZYX2LshBxoipfKUDAiZ+0KkdtO6KHmYH25vsf+o/r7Yky3ZcGInLV77MmtlJCvPb326YQof1fqpUJ9RYAWVUghEqC6GSKhAeG2CiXgqE5rAAAAAElFTkSuQmCC" class="icon"/>
             {% if user.is_authenticated %}
             <div>
-                <a href="">Journal</a>
-                <a href="">BloomBot</a>
+                <a href="{% url 'journal' %}">Journal</a>
+                <a href='{% url "bloombot" %}'>BloomBot</a>
                 <a href="">Community</a>
                 <a href="">More</a>
             </div>
@@ -44,8 +44,8 @@
                 {% if user.is_authenticated %}
                     <a href="">Blog</a>
                     <a href="" style="text-decoration: none;">Feedback</a>
-                    <a href="" style="text-decoration: none;">Privacy Policy</a>
-                    <a href=""><button class="button">Logout</button></a>
+                    <a href='{% url "privacy-policy" %}' style="text-decoration: none;">Privacy Policy</a>
+                    <a href='{% url "logout" %}'><button class="button">Logout</button></a>
                 {% else %}
                     <a href="{% url "register" %}" style="text-decoration: none;">Sign Up</a>
                     <a href="{% url "login" %}"><button class="button">Log In</button></a>
