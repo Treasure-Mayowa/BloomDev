@@ -10,9 +10,6 @@
     nav a {
         display: none;
     }
-    nav a {
-        display: none;
-    }
     nav .responsive {position: relative;}
     nav .responsive a {
         float: none;
@@ -20,16 +17,10 @@
         text-align: left;
     }
     nav .icon {display: block;}
-    nav .responsive {position: relative;}
     nav .responsive .icon {
         position: absolute;
         right: 0;
         top: 0;
-    }
-    nav .responsive a {
-        float: none;
-        display: block;
-        text-align: left;
     }
 
   }
@@ -101,6 +92,10 @@ nav .icon {display: none;}
     float: right;
     margin-right: 2%;
     width: 45%;
+}
+.right img {
+    max-width: 100%;
+    height: auto;
 }
 .main {
     padding: 10px;
