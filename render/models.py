@@ -29,3 +29,7 @@ class BlogPost(models.Model):
 
 class Journal_Prompts(models.Model):
     prompt = models.TextField()
+
+    def __str__(self):
+        return f"Journal Prompt: {self.prompt}"
+    
