@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .left {
         float: none;
         width: 100%;
@@ -10,6 +10,9 @@
     nav a {
         display: none;
     }
+    nav a {
+        display: none;
+    }
     nav .responsive {position: relative;}
     nav .responsive a {
         float: none;
@@ -17,6 +20,17 @@
         text-align: left;
     }
     nav .icon {display: block;}
+    nav .responsive {position: relative;}
+    nav .responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    nav .responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
 
   }
 
@@ -72,7 +86,7 @@ nav a {
     text-decoration: none;
 }
 
-nav a:active {
+nav a.active {
     color: #000;
 }
 nav .icon {display: none;}
