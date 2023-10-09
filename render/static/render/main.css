@@ -1,10 +1,12 @@
 @media screen and (max-width: 768px) {
     .left {
         float: none;
+        margin-left: none;
         width: 100%;
     }
     .right {
         float: none;
+        margin-right: none;
         width: 100%;
     }
     nav a {
