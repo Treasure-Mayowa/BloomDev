@@ -26,15 +26,12 @@
         {% bootstrap_javascript %}
     </head>
     <body>
-        <nav class="navbar shadow">
-            <i class='bx bx-menu icon'></i>
+        <nav class="navbar shadow" id="navbar">
+            <a href="javascript:void(0);" class="icon">
+            <i class='bx bx-menu'></i>
+            </a>
             {% if user.is_authenticated %}
-            <div>
-                <a href="{% url 'journal' %}">Journal</a>
-                <a href="{% url 'bloombot' %}">BloomBot</a>
-                <a href="">Community</a>
-                <a href="">More</a>
-            </div>
+            
             {% endif %}
             <div class="logo">
                 <img src="{% static 'render/Bloom_Logo.png' %}" alt="Bloom Logo" width="70" height="60"/>
@@ -42,6 +39,10 @@
             </div>
             <div>
                 {% if user.is_authenticated %}
+                    <a href="{% url 'journal' %}">Journal</a>
+                    <a href="{% url 'bloombot' %}">BloomBot</a>
+                    <a href="">Community</a>
+                    <a href="">More</a>
                     <a href="">Blog</a>
                     <a href="" style="text-decoration: none;">Feedback</a>
                     <a href='{% url "privacy-policy" %}' style="text-decoration: none;">Privacy Policy</a>
