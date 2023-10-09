@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", ()=> {
     const todoForm = document.querySelector("#todo-form")
     document.querySelector(".icon").addEventListener("click", ()=> {
-        var x = document.getElementById("nav");
+        var x = document.querySelector("nav");
         if (x.className === "navbar shadow") {
-            x.className += "responsive";
+            x.className += " responsive";
         } else {
             x.className = "navbar shadow";
         }
