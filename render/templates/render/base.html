@@ -30,10 +30,10 @@
             <a href="javascript:void(0);" class="icon">
                 <i class='bx bx-menu'></i>
             </a>
-            <div class="logo">
+            <a class="logo" href="{% url 'index' %}">
                 <img src="{% static 'render/Bloom_Logo.png' %}" alt="Bloom Logo" width="70" height="60"/>
                 <h1>bloom</h1>
-            </div>
+            </a>
             <div>
                 {% if user.is_authenticated %}
                     <a href="{% url 'journal' %}">Journal</a>
