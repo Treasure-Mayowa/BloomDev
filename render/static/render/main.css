@@ -45,7 +45,7 @@ h1, h2 {
     color: #000;
 }
 
-p, a, h4 {
+* {
     font-family: 'Nunito Sans', sans-serif;
     text-decoration: none;
 }
