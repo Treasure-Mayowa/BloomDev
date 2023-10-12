@@ -11,7 +11,7 @@
     <br>
     <div class="activities">
         {% for journal in journals %}
-            <div class="features">
+            <div class="features journal">
                 <p><em>{{ journal.title }}</em></p>
                 <p>{{ journal.content|slice:":150" }}...</p>
                 <a href="{% url 'edit_journal' journal_id=journal.id %}"><button class="button">Edit</button></a>
