@@ -10,6 +10,7 @@ urlpatterns = [
     path("journal", views.journal, name="journal"),
     path("journal/add", views.add_journal, name="add_journal"),
     path("journal/edit/<int:journal_id>", views.edit_journal, name="edit_journal"),
+    path("journal/delete/<int:id>", views.delete_journal, name="delete_journal"),
     path("bloombot", views.bloombot, name="bloombot"),
     path("todos", views.todos, name="todos"),
     path("add_todo", views.add_todo, name="add_todo"),
