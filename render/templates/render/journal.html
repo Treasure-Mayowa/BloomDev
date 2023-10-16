@@ -9,11 +9,11 @@
         <p style="color:black; text-decoration: none;"><em>{{ prompt }}</em></p>
     </div></a>
     <br>
-    <div class="activities">
+    <div class="activities journal">
         {% for journal in journals %}
             <div class="features journal">
                 <p><em>{{ journal.title }}</em></p>
-                <p>{{ journal.content|slice:":150" }}...</p>
+                <p>{{ journal.content|slice:":120" }}...</p>
                 <a href="{% url 'edit_journal' journal_id=journal.id %}"><button class="button">Edit</button></a>
                 <p class="fw-lighter">Created by {{ journal.created_at }}</p>
             </div>
