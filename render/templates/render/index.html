@@ -9,33 +9,72 @@
     <div class="activities">
         <div class="features"><a href="{% url "journal" %}" style="color:black; text-decoration: none;">
             <i class='bx bxs-book-open bx-lg'></i>
-            <p>Journal</p></a>
+            <p>journal</p></a>
         </div>
         <div class="features"><a href="{% url "todos" %}" style="color:black; text-decoration: none;">
             <i class='bx bx-checkbox-checked bx-lg'></i>
-            <p>To-dos</p></a>
+            <p>to-dos</p></a>
         </div>
         <div class="features"><a href="{% url "bloombot" %}" style="color:black; text-decoration: none;">
             <i class='bx bx-bot bx-lg'></i>
-            <p>BloomBot</p></a>
+            <p>bloomBot</p></a>
         </div>
         <div class="features">
             <i class='bx bxs-conversation bx-lg'></i>
-            <p>Community Chat</p>
+            <p>community Chat</p>
         </div>
         <div class="features">
             <i class='bx bxs-caret-down-circle bx-lg'></i>
-            <p>Other Activities</p>
+            <p>other activities</p>
         </div>
     </div>
 {% else %}
     <div class="main">
         <div class="left">
             <h2>helping you bloom 🫶</h2>
-            <p>From mindful journaling to productive to-do lists,  chat with our wellness chatbot, connect with a supportive community, and access expert therapists – it's all here to help you flourish.</p>
+            <br>
+            <p>from mindful journaling to productive to-do lists,  chat with our wellness chatbot, connect with a supportive community, and access expert therapists – it's all here to help you flourish.</p>
+            <br>
+            <a href="{% url "register" %}"><button class="button">get started</button></a> <a href="{% url "login" %}" style="text-decoration: none; padding-left: 11px;">log in</a>
         </div>
-        <div class="right">
-            <img src="{% static 'render/Bloom_Logo.png' %}"> 
+        <div class="right home">
+            <img src="{% static 'render/Bloom-ill.png' %}" alt="Bloom"> 
+        </div>
+    </div>
+    <div class="main">
+        <h2 style="text-align: center;">features of <strong>bloom</strong></h2>
+        <hr>
+        <div class="activities home">
+            <div class="features home">
+                <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/journal.png" alt="journal"/>
+                <h5>journaling</h5>
+                <p>write down your thoughts and express yourself with guided prompts.</p>
+            </div>
+            <div class="features home">
+                <img width="96" height="96" src="https://img.icons8.com/fluency/96/chatbot.png" alt="chatbot"/>
+                <h5>mental wellness chatbot</h5>
+                <p>chat with our chatbot deisgned to mental support.</p>
+            </div>
+            <div class="features home">
+                <img width="95" height="95" src="https://img.icons8.com/dusk/64/tasklist.png" alt="tasklist"/>
+                <h5>to-do and habit tracker</h5>
+                <p>stay organized and build healthy habits.</p>
+            </div>
+            <div class="features home">
+                <img width="96" height="96" src="https://img.icons8.com/doodle/96/community.png" alt="community"/>
+                <h5>community</h5>
+                <p>join a like-minded community of individuals who are on a similar wellness journey.<p>
+            </div>
+            <div class="features home">
+                <img width="95" height="95" src="https://img.icons8.com/ios/100/hyperactive.png" alt="hyperactive"/>
+                <h5>exercises</h5>
+                <p>access a library of mental wellness exercises to help you in your journey.</p>
+            </div>
+            <div class="features home">
+                <img width="95" height="95" src="https://img.icons8.com/plasticine/100/questions.png" alt="questions"/>
+                <h5>simulation quiz</h5>
+                <p>boost your mental resilence through real-life scenario challenges.</p>
+            </div>
         </div>
     </div>
 {% endif %}
