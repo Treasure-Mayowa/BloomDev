@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 import datetime
 from .models import *
+from random import randint
 
 
 # Create your views here.
@@ -15,9 +16,12 @@ def index(request):
 
 @login_required
 def journal(request):
+    num_of_prompts = Journal_Prompts.objects.count()
+    prompt_index = randint(0, num_of_prompts - 1)
+    prompt = Journal_Prompts.objects.all()[prompt_index]
     journal_entries = Journal.objects.filter(author=request.user).order_by('-created_at')
     return render(request, "render/journal.html", {
-        "journals": journal_entries
+        "journals": journal_entries, "prompt": prompt
     })
 
 def blog(request):
@@ -58,8 +62,15 @@ def edit_journal(request, journal_id):
         "journal": journal_entry
     })
 
-
 @login_required
+def delete_journal(request, id):
+    journal = Journal.objects.get(pk=id)
+    if journal.author == request.user:
+        journal.delete()
+        return HttpResponseRedirect(reverse("journal"))
+    else:
+        return HttpResponseRedirect(reverse('journal'))
+
 def privacy_policy(request):
     return render(request, "render/privacy-policy.html")
 
