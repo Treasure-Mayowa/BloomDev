@@ -1,8 +1,11 @@
 {% extends "render/base.html" %}
 {% block title %}Edit Journal Entry - Bloom{% endblock title %}
 {% block body %}
-<h2>Edit Journal Entry</h2>
-    <form method="post" method="{% url 'edit_journal' journal_id=journal.id %}" class="form">
+<a href="{% url "journal" %}"><i class='bx bxs-left-arrow bx-lg'></i></a>
+<a href="#" onclick="confirmDelete(event, {{ journal.id }})"><i class='bx bx-trash bx-lg' style="color:red; float: right; margin-right: 2%;"></i></a>
+<h2 style="text-align: center;">Edit Journal Entry</h2>
+
+    <form method="post" method="{% url 'edit_journal' journal_id=journal.id %}" class="form journal">
         {% csrf_token %}
         <input type="text" required placeholder="Title of journal entry" name="title" value="{{ journal.title }}"/>
         <br>
