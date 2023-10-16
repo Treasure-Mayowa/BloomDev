@@ -1,8 +1,9 @@
 {% extends "render/base.html" %}
 {% block title %}Add Journal Entry - Bloom{% endblock title %}
 {% block body %}
-<h2>New Journal Entry</h2>
-    <form method="post" method="{% url 'add_journal' %}" class="form">
+<a href="{% url "journal" %}"><i class='bx bxs-left-arrow bx-lg'></i></a>
+<h2 style="text-align: center;">New Journal Entry</h2>
+    <form method="post" method="{% url 'add_journal' %}" class="form journal">
         {% csrf_token %}
         {% if prompt %}
         <input type="text" required placeholder="Title of journal entry" name="title" value="{{ prompt }}" />
