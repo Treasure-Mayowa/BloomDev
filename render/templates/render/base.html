@@ -36,21 +36,24 @@
             </a>
             <div>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'journal' %}">Journal</a>
-                    <a href="{% url 'bloombot' %}">BloomBot</a>
-                    <a href="">Community</a>
-                    <a href="">More</a>
-                    <a href="">Blog</a>
-                    <a href="" style="text-decoration: none;">Feedback</a>
-                    <a href='{% url "privacy-policy" %}' style="text-decoration: none;">Privacy Policy</a>
-                    <a href='{% url "logout" %}'><button class="button">Logout</button></a>
+                    <a href="{% url 'journal' %}">journal</a>
+                    <a href="">tracker</a>
+                    <a href="{% url 'bloombot' %}">bloombot</a>
+                    <a href="">community</a>
+                    <a href="">exercises</a>
+                    <a href="">blog</a>
+                    <a href='{% url "privacy-policy" %}' style="text-decoration: none;">privacy policy</a>
+                    <a href='{% url "logout" %}'><button class="button">logout</button></a>
                 {% else %}
-                    <a href="{% url "register" %}" style="text-decoration: none;">Sign Up</a>
-                    <a href="{% url "login" %}"><button class="button">Log In</button></a>
+                    <a href="{% url "register" %}" style="text-decoration: none;">sign up</a>
+                    <a href="{% url "login" %}"><button class="button">log in</button></a>
                 {% endif %}
             </div>
         </nav><br>
         {% block body %}{% endblock body %}
         <script type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
     </body>
+    <footer>
+        {% block footer %}{% endblock footer %}
+    </footer>
 </html>
