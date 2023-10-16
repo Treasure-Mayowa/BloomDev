@@ -9,6 +9,9 @@
         margin-right: none;
         width: 100%;
     }
+    .activities.journal {
+        display: block;
+    }
     .activities.home {
         display: block;
     }
@@ -61,7 +64,7 @@ h1, h2 {
 .fw-lighter  {
     font-family: 'Nunito', sans-serif;
 }
-.prompts * {
+.prompts {
     padding: 10px;
     text-align: center;
     border-radius: 5px;
