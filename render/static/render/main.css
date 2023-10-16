@@ -9,6 +9,9 @@
         margin-right: none;
         width: 100%;
     }
+    .activities.home {
+        display: block;
+    }
     nav a {
         display: none;
     }
@@ -30,11 +33,6 @@
             display: block;
             text-align: left;
         }
-    nav.responsive .icon {
-            position: absolute;
-            left: 0;
-            top: 0;
-    }
     .features.journal {
         text-align: center;
         padding: 8px;
@@ -63,15 +61,11 @@ h1, h2 {
 .fw-lighter  {
     font-family: 'Nunito', sans-serif;
 }
-
-body {
-    background-color: #38b6fe;
-}
-.prompts {
+.prompts * {
     padding: 10px;
-    background-color: #38b6fe;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 5px;
+    background-color: #38b6fe;
 }
 
 .button {
@@ -88,12 +82,12 @@ body {
     box-shadow: none;
 }
 nav {
-    border: 1px solid #000; 
-    border-radius: 10px;
-    padding: 10px;
+    border-bottom: 1px solid #000; 
+    padding: 8px;
     width: 99%;
     margin: auto;
     overflow: hidden;
+    background-color: aliceblue;
 }
 nav a {
     text-align: center;
@@ -114,12 +108,15 @@ nav .icon {display: none;}
 
 .right {
     float: right;
-    margin-right: 2%;
+    margin-right: 1%;
     width: 45%;
 }
 .right img {
     max-width: 100%;
     height: auto;
+}
+.right.home {
+    background-image: url(./Bloom-bg.png);
 }
 .main {
     padding: 10px;
@@ -133,6 +130,9 @@ nav .icon {display: none;}
     margin: auto;
     width: 60%;
     padding: 5% 0%;
+}
+.form.journal {
+    width: 80%;
 }
 
 .form input {
@@ -157,7 +157,6 @@ nav .icon {display: none;}
     display: flex;
 }
 .features {
-    width: 20%;
     text-align: center;
     padding: 8px;
     padding-top: 20px;
@@ -168,7 +167,21 @@ nav .icon {display: none;}
     flex: 0 0 calc(33.3333% - 10px); 
     margin: 5px;
 }
-
+.features.home {
+    border: none;
+    background-color: #5271FF;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+.features.home * {
+    background-color: #5271FF;
+    color: #fff;
+} 
+.features.home:hover {
+    transform: scale(1.1);
+}
+  
 .activities {
     display: flex;
     flex-wrap: wrap;

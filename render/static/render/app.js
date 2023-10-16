@@ -16,3 +16,18 @@ document.addEventListener("DOMContentLoaded", ()=> {
         }
     })
 })
+
+// Journal entry delete
+function confirmDelete(event, entryId) {
+    event.preventDefault(); 
+
+    const confirmed = confirm("Are you sure you want to delete this entry?");
+
+    if (confirmed) {
+
+        const deleteUrl = `/journal/delete/${entryId}`;
+        window.location = deleteUrl;
+    } else {
+        // If the user cancels, do nothing
+    }
+}
