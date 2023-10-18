@@ -15,7 +15,7 @@ class Journal(models.Model):
 class Todo(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = encrypt(models.TextField())
-    details = encrypt(models.TextField())
+    details = encrypt(models.TextField(default=""))
     expected_time = models.IntegerField(default=0)
     actual_time = models.IntegerField(default=0)
     day_added = models.DateField(auto_now_add=True)
