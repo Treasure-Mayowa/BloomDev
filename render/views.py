@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
@@ -105,6 +105,28 @@ def delete_todo(request, id):
         return HttpResponseRedirect(reverse("todos"))
     else:
         return HttpResponseRedirect(reverse('todos'))
+
+
+# API views
+@login_required
+def check_todo(request, id):
+    todo = Todo.objects.get(pk=id)
+    if todo.user == request.user:
+        todo.done = True
+        todo.save()
+        return JsonResponse({"message": "Successfully checked!"})
+    else:
+        return JsonResponse({"error": "Can't make changes to this todo"})
+
+@login_required
+def uncheck_todo(request, id):
+    todo = Todo.objects.get(pk=id)
+    if todo.user == request.user:
+        todo.done = False
+        todo.save()
+        return JsonResponse({"message": "Successfully unchecked!"})
+    else:
+        return JsonResponse({"error": "Can't make changes to this todo"})
 
 
 def login_view(request):
