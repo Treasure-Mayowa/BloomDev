@@ -15,7 +15,26 @@ document.addEventListener("DOMContentLoaded", ()=> {
             todoForm.style.display = "none"
         }
     })
-})
+    const checkboxs = document.getElementsByClassName("checkbox")
+    for (let i = 0; i < checkboxs.length; i++) {
+        checkboxs[i].addEventListener("change", () => {
+            const id = checkboxs[i].getAttribute("data-id");
+            if (checkboxs[i].checked) {
+                fetch(`/todos/changed/checked/${id}`)
+            
+            } else {
+                fetch(`/todos/changed/unchecked/${id}`)
+            }    
+    })
+    const todosTrash = document.getElementsByClassName("bx bx-trash bx-sm todo")
+    for (let i = 0; i < todosTrash.length; i++) {
+        todosTrash[i].addEventListener("click", () => {
+            const id = todosTrash[i].getAttribute("data-id");
+            fetch(`/todos/changed/delete/${id}`)
+            location.reload();
+    })
+    }
+}})
 
 // Journal entry delete
 function confirmDelete(event, entryId) {

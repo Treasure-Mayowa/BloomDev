@@ -221,3 +221,11 @@ nav .icon {display: none;}
     width: 99%;
     height: 800px;
 }
+
+.tasks {
+    margin: auto;
+    width: 95%;
+}
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+}
