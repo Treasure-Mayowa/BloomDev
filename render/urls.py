@@ -14,7 +14,11 @@ urlpatterns = [
     path("bloombot", views.bloombot, name="bloombot"),
     path("todos", views.todos, name="todos"),
     path("add_todo", views.add_todo, name="add_todo"),
-    path("delete_todo/<int:id>", views.delete_todo, name="delete_todo"),
     path("privacy-policy", views.privacy_policy, name="privacy-policy"),
     path("blog", views.blog, name="blog"),
+
+    # API routes
+    path("todos/changed/checked/<int:id>", views.check_todo, name="check_todo"),
+    path("todos/changed/unchecked/<int:id>", views.uncheck_todo, name="uncheck_todo"),
+    path("todos/changed/delete/<int:id>", views.delete_todo, name="delete_todo"),
 ]
