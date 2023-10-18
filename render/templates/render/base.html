@@ -37,7 +37,7 @@
             <div>
                 {% if user.is_authenticated %}
                     <a href="{% url 'journal' %}">journal</a>
-                    <a href="">tracker</a>
+                    <a href="{% url "todos" %}">tracker</a>
                     <a href="{% url 'bloombot' %}">bloombot</a>
                     <a href="">community</a>
                     <a href="">exercises</a>

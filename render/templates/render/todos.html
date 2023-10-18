@@ -15,10 +15,12 @@
 </div>
 <br>
 {% if todos %}
+<div class="tasks">
     {% for todo in todos %}
-    <input type="checkbox" {% if todo.done == True %} checked {% endif %} /><label>{{ todo.name }}</label><a href="{% url 'delete_todo' id=todo.id %}"><i class='bx bx-trash'  style="color:red; float: right; margin-right: 2%;"></i></a>
-    <br>
+        <input type="checkbox" {% if todo.done == True %} checked {% endif %}  class="checkbox" data-id="{{ todo.id }}" /><label><h5>{{ todo.name }}</h5></label><i class='bx bx-trash bx-sm todo' data-id="{{ todo.id }}" style="color:red; float: right; margin-right: 2%; cursor: pointer;"></i>
+        <br>
     {% endfor %}
+</div>
 {% else %}
 <p>No tasks for today</p>
 {% endif %}
