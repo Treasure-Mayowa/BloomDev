@@ -4,6 +4,7 @@ set -o errexit
 
 poetry install
 pip install gunicorn
+pip install --upgrade pip
 pip install -r requirements.txt
 python manage.py collectstatic --no-input
 python manage.py makemigrations render
