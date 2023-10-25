@@ -27,9 +27,16 @@ class BlogPost(models.Model):
     content = models.TextField()
     posted_by = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.title} written by {self.author.username}"
+    
 class Journal_Prompts(models.Model):
     prompt = models.TextField()
 
     def __str__(self):
         return f"Journal Prompt: {self.prompt}"
-    
+
+class Youtube_Content(models.Model):
+    title = models.TextField()  
+    embed_code = models.TextField()
+    source = models.TextField()
