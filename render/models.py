@@ -36,7 +36,7 @@ class Journal_Prompts(models.Model):
     def __str__(self):
         return f"Journal Prompt: {self.prompt}"
 
-class Youtube_Content(models.Model):
+class YoutubeContent(models.Model):
     title = models.TextField()  
     embed_code = models.TextField()
     source = models.TextField()
