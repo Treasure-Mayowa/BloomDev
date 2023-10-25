@@ -40,3 +40,6 @@ class Youtube_Content(models.Model):
     title = models.TextField()  
     embed_code = models.TextField()
     source = models.TextField()
+
+    class Meta:
+        db_table = 'render_youtube_content'
