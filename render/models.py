@@ -25,7 +25,7 @@ class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.TextField()
     content = models.TextField()
-    post_image = models.URLField(max_length=500)
+    post_image = models.URLField(max_length=500, default="")
     posted_by = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
