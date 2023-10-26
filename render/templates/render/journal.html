@@ -1,15 +1,20 @@
 {% extends "render/base.html" %}
+
 {% block title %}Journal - Bloom {% endblock title %}
+
 {% block body %}
 <div class="main">
     <h2 style="float:left;">Your Journal Entries</h2>
     <a href="{% url 'add_journal' %}"><button style="float:right;" class="button" id="journal"><i class='bx bx-plus'></i>New</button></a>
     <br><br>
-    <a href="{% url 'add_journal' %}?prompt={{ prompt.prompt }}"><div class="prompts">
-        <p style="color:black; text-decoration: none;"><em>{{ prompt }}</em></p>
-    </div></a>
+    <a href="{% url 'add_journal' %}?prompt={{ prompt.prompt }}">
+        <div class="prompts">
+            <p style="color:black; text-decoration: none;"><em>{{ prompt }}</em></p>
+        </div>
+    </a>
     <br>
     <div class="activities journal">
+        {% if journals %}
         {% for journal in journals %}
             <div class="features journal">
                 <p><em>{{ journal.title }}</em></p>
@@ -18,6 +23,9 @@
                 <p class="fw-lighter">Created by {{ journal.created_at }}</p>
             </div>
         {% endfor %}
+        {% else %}
+        <p>No journal entry yet. Click the <strong>+</strong> button to start writing.</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
