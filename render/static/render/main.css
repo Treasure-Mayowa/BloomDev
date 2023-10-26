@@ -184,6 +184,11 @@ nav .icon {display: none;}
 .features.home:hover {
     transform: scale(1.1);
 }
+
+.features iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
   
 .activities {
     display: flex;
