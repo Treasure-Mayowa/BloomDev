@@ -16,6 +16,8 @@ urlpatterns = [
     path("add_todo", views.add_todo, name="add_todo"),
     path("privacy-policy", views.privacy_policy, name="privacy-policy"),
     path("blog", views.blog, name="blog"),
+    path("blog/<str:title>", views.blog_post, name="blog_post"),
+    path("resources", views.resources, name="resources"),
 
     # API routes
     path("todos/changed/checked/<int:id>", views.check_todo, name="check_todo"),

@@ -1,0 +1,19 @@
+{% extends "render/base.html" %}
+
+{% block title %}Resources - Bloom {% endblock title %} 
+
+{% block body %}
+<div class="main">
+    <h2 style="float:left;">Resources</h2>
+    <br><br>
+    <div class="activities journal">
+        {% for video in videos %}
+            <div class="features" style="border:none">
+                {{ video.embed_code| safe }}
+                <p>{{ video.title }}</p>
+                <em>{{ video.source }}</em>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body %}

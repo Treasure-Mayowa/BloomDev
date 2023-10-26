@@ -15,6 +15,13 @@ def index(request):
     return render(request, 'render/index.html', {})
 
 @login_required
+def resources(request):
+    return render(request, "render/resources.html", {
+        "videos": YoutubeContent.objects.all()
+    })
+
+
+@login_required
 def journal(request):
     num_of_prompts = Journal_Prompts.objects.count()
     prompt_index = randint(0, num_of_prompts - 1)
@@ -25,8 +32,14 @@ def journal(request):
     })
 
 def blog(request):
-    return render(request, "render/blog.html")
+    return render(request, "render/blog.html", {
+        "posts": BlogPost.objects.all()
+    })
 
+def blog_post(request, title):
+    return render(request, "render/blogpost.html", {
+        "post": BlogPost.objects.get(title=title)
+    })
 
 @login_required
 def add_journal(request):
